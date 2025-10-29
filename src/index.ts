@@ -1,7 +1,5 @@
 import { Hono } from "hono";
 
-let r = "r";
-
 type Bindings = {
   EH_GAME: KVNamespace;
 };
