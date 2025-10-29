@@ -11,6 +11,13 @@
     },
   ],
 
+  "routes": [
+    {
+      "pattern": "eh-game.rafemedia.com",
+      "custom_domain": true,
+    },
+  ],
+
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
