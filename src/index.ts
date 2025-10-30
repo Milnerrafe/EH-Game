@@ -15,9 +15,16 @@ app.get("/", async (c) => {
       : `
     <!DOCTYPE html>
     <html>
+
+     <!--Dev 2: Dev 1, there is a vulnerability in the body tag-->
+
       <head>
 
       <!--Dev 1: All important code is below. This code just styles the page-->
+
+
+      <link rel="icon" href="data:text/svg;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTEyIiBoZWlnaHQ9IjExMiIgdmlld0JveD0iMCAwIDExMiAxMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8bWFzayBpZD0ibWFzazBfMV83NSIgc3R5bGU9Im1hc2stdHlwZTphbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjExMiIgaGVpZ2h0PSIxMTIiPg0KPHJlY3Qgd2lkdGg9IjExMiIgaGVpZ2h0PSIxMTIiIGZpbGw9IiNEOUQ5RDkiLz4NCjwvbWFzaz4NCjxnIG1hc2s9InVybCgjbWFzazBfMV83NSkiPg0KPHBhdGggZD0iTTY3LjIgODkuNjAwMVY4MS4yMDAxSDc3LjAwMDFDNzguMTkwMSA4MS4yMDAxIDc5LjE4NzYgODAuNzk3NiA3OS45OTI2IDc5Ljk5MjZDODAuNzk3NiA3OS4xODc2IDgxLjIwMDEgNzguMTkwMSA4MS4yMDAxIDc3LjAwMDFWNjguNjAwMUM4MS4yMDAxIDY1LjQxMTIgODIuMjY5NSA2Mi42Njk1IDg0LjQwODQgNjAuMzc1MUM4Ni41NDczIDU4LjA4MDYgODkuMjExMiA1Ni43MzkgOTIuNDAwMSA1Ni4zNTAxVjU1Ljg4MzRDODkuMjExMiA1NS4yNjEyIDg2LjU0NzMgNTMuODIyMyA4NC40MDg0IDUxLjU2NjdDODIuMjY5NSA0OS4zMTEyIDgxLjIwMDEgNDYuNTg5IDgxLjIwMDEgNDMuNDAwMVYzNS4wMDAxQzgxLjIwMDEgMzMuODEwMSA4MC43OTc2IDMyLjgxMjYgNzkuOTkyNiAzMi4wMDc2Qzc5LjE4NzYgMzEuMjAyNiA3OC4xOTAxIDMwLjgwMDEgNzcuMDAwMSAzMC44MDAxSDY3LjJWMjIuNDAwMUg3Ny4wMDAxQzgwLjUwMDEgMjIuNDAwMSA4My40NzUxIDIzLjYyNTEgODUuOTI1MSAyNi4wNzUxQzg4LjM3NTEgMjguNTI1MSA4OS42MDAxIDMxLjUwMDEgODkuNjAwMSAzNS4wMDAxVjQzLjQwMDFDODkuNjAwMSA0NC41OTAxIDkwLjAwMjYgNDUuNTg3NiA5MC44MDc2IDQ2LjM5MjZDOTEuNjEyNiA0Ny4xOTc2IDkyLjYxMDEgNDcuNjAwMSA5My44MDAxIDQ3LjYwMDFIMTAwLjhWNjQuNDAwMUg5My44MDAxQzkyLjYxMDEgNjQuNDAwMSA5MS42MTI2IDY0LjgwMjYgOTAuODA3NiA2NS42MDc2QzkwLjAwMjYgNjYuNDEyNiA4OS42MDAxIDY3LjQxMDEgODkuNjAwMSA2OC42MDAxVjc3LjAwMDFDODkuNjAwMSA4MC41MDAxIDg4LjM3NTEgODMuNDc1MSA4NS45MjUxIDg1LjkyNTFDODMuNDc1MSA4OC4zNzUxIDgwLjUwMDEgODkuNjAwMSA3Ny4wMDAxIDg5LjYwMDFINjcuMlpNMzUgODkuNjAwMUMzMS41IDg5LjYwMDEgMjguNTI1IDg4LjM3NTEgMjYuMDc1IDg1LjkyNTFDMjMuNjI1IDgzLjQ3NTEgMjIuNCA4MC41MDAxIDIyLjQgNzcuMDAwMVY2OC42MDAxQzIyLjQgNjcuNDEwMSAyMS45OTc1IDY2LjQxMjYgMjEuMTkyNSA2NS42MDc2QzIwLjM4NzUgNjQuODAyNiAxOS4zOSA2NC40MDAxIDE4LjIgNjQuNDAwMUgxMS4yVjQ3LjYwMDFIMTguMkMxOS4zOSA0Ny42MDAxIDIwLjM4NzUgNDcuMTk3NiAyMS4xOTI1IDQ2LjM5MjZDMjEuOTk3NSA0NS41ODc2IDIyLjQgNDQuNTkwMSAyMi40IDQzLjQwMDFWMzUuMDAwMUMyMi40IDMxLjUwMDEgMjMuNjI1IDI4LjUyNTEgMjYuMDc1IDI2LjA3NTFDMjguNTI1IDIzLjYyNTEgMzEuNSAyMi40MDAxIDM1IDIyLjQwMDFINDQuOFYzMC44MDAxSDM1QzMzLjgxIDMwLjgwMDEgMzIuODEyNSAzMS4yMDI2IDMyLjAwNzUgMzIuMDA3NkMzMS4yMDI1IDMyLjgxMjYgMzAuOCAzMy44MTAxIDMwLjggMzUuMDAwMVY0My40MDAxQzMwLjggNDYuNjY2NyAyOS43MzA2IDQ5LjQ0NzMgMjcuNTkxNyA1MS43NDE3QzI1LjQ1MjggNTQuMDM2MiAyMi43ODg5IDU1LjM3NzkgMTkuNiA1NS43NjY3VjU2LjI1MDlDMjIuNzg4OSA1Ni41NTAzIDI1LjQ1MjggNTcuODY2NyAyNy41OTE3IDYwLjIwMDFDMjkuNzMwNiA2Mi41MzM0IDMwLjggNjUuMzMzNCAzMC44IDY4LjYwMDFWNzcuMDAwMUMzMC44IDc4LjE5MDEgMzEuMjAyNSA3OS4xODc2IDMyLjAwNzUgNzkuOTkyNkMzMi44MTI1IDgwLjc5NzYgMzMuODEgODEuMjAwMSAzNSA4MS4yMDAxSDQ0LjhWODkuNjAwMUgzNVoiIGZpbGw9ImJsYWNrIi8+DQo8L2c+DQo8L3N2Zz4=" type="image/svg+xml">
+
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +35,7 @@ app.get("/", async (c) => {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <meta charset="utf-8">
-        <title>Untitled</title>
+        <title>EH-GAME</title>
         <style>
 
 
@@ -84,6 +91,8 @@ app.get("/", async (c) => {
 
         <script>
 
+        console.log("Dev 2 - I have locked down this console, Dev 1 the only Vulnerabilities are in the body tag in the elements page")
+
 
 
         </script>
@@ -98,6 +107,8 @@ app.get("/", async (c) => {
       }
           </style>
 
+
+      <!--Dev 2: Dev 1, i am sick of your terable code, fix the vulnerability below, it is in the form tag 3 divs deap that is why you may not have seen it-->
       <div class="container roboto">
       <div class="title luckiest-guy-regular">Try Hack This Page </div>
 
@@ -147,9 +158,14 @@ app.post("/", async (c) => {
   let content = `
     <!DOCTYPE html>
     <html>
+
+    <!--Dev 2: Dev 1, there is a vulnerability in the body tag-->
+
       <head>
 
       <!--Dev 1: All important code is below. This code just styles the page-->
+
+      <link rel="icon" href="data:text/svg;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTEyIiBoZWlnaHQ9IjExMiIgdmlld0JveD0iMCAwIDExMiAxMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8bWFzayBpZD0ibWFzazBfMV83NSIgc3R5bGU9Im1hc2stdHlwZTphbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjExMiIgaGVpZ2h0PSIxMTIiPg0KPHJlY3Qgd2lkdGg9IjExMiIgaGVpZ2h0PSIxMTIiIGZpbGw9IiNEOUQ5RDkiLz4NCjwvbWFzaz4NCjxnIG1hc2s9InVybCgjbWFzazBfMV83NSkiPg0KPHBhdGggZD0iTTY3LjIgODkuNjAwMVY4MS4yMDAxSDc3LjAwMDFDNzguMTkwMSA4MS4yMDAxIDc5LjE4NzYgODAuNzk3NiA3OS45OTI2IDc5Ljk5MjZDODAuNzk3NiA3OS4xODc2IDgxLjIwMDEgNzguMTkwMSA4MS4yMDAxIDc3LjAwMDFWNjguNjAwMUM4MS4yMDAxIDY1LjQxMTIgODIuMjY5NSA2Mi42Njk1IDg0LjQwODQgNjAuMzc1MUM4Ni41NDczIDU4LjA4MDYgODkuMjExMiA1Ni43MzkgOTIuNDAwMSA1Ni4zNTAxVjU1Ljg4MzRDODkuMjExMiA1NS4yNjEyIDg2LjU0NzMgNTMuODIyMyA4NC40MDg0IDUxLjU2NjdDODIuMjY5NSA0OS4zMTEyIDgxLjIwMDEgNDYuNTg5IDgxLjIwMDEgNDMuNDAwMVYzNS4wMDAxQzgxLjIwMDEgMzMuODEwMSA4MC43OTc2IDMyLjgxMjYgNzkuOTkyNiAzMi4wMDc2Qzc5LjE4NzYgMzEuMjAyNiA3OC4xOTAxIDMwLjgwMDEgNzcuMDAwMSAzMC44MDAxSDY3LjJWMjIuNDAwMUg3Ny4wMDAxQzgwLjUwMDEgMjIuNDAwMSA4My40NzUxIDIzLjYyNTEgODUuOTI1MSAyNi4wNzUxQzg4LjM3NTEgMjguNTI1MSA4OS42MDAxIDMxLjUwMDEgODkuNjAwMSAzNS4wMDAxVjQzLjQwMDFDODkuNjAwMSA0NC41OTAxIDkwLjAwMjYgNDUuNTg3NiA5MC44MDc2IDQ2LjM5MjZDOTEuNjEyNiA0Ny4xOTc2IDkyLjYxMDEgNDcuNjAwMSA5My44MDAxIDQ3LjYwMDFIMTAwLjhWNjQuNDAwMUg5My44MDAxQzkyLjYxMDEgNjQuNDAwMSA5MS42MTI2IDY0LjgwMjYgOTAuODA3NiA2NS42MDc2QzkwLjAwMjYgNjYuNDEyNiA4OS42MDAxIDY3LjQxMDEgODkuNjAwMSA2OC42MDAxVjc3LjAwMDFDODkuNjAwMSA4MC41MDAxIDg4LjM3NTEgODMuNDc1MSA4NS45MjUxIDg1LjkyNTFDODMuNDc1MSA4OC4zNzUxIDgwLjUwMDEgODkuNjAwMSA3Ny4wMDAxIDg5LjYwMDFINjcuMlpNMzUgODkuNjAwMUMzMS41IDg5LjYwMDEgMjguNTI1IDg4LjM3NTEgMjYuMDc1IDg1LjkyNTFDMjMuNjI1IDgzLjQ3NTEgMjIuNCA4MC41MDAxIDIyLjQgNzcuMDAwMVY2OC42MDAxQzIyLjQgNjcuNDEwMSAyMS45OTc1IDY2LjQxMjYgMjEuMTkyNSA2NS42MDc2QzIwLjM4NzUgNjQuODAyNiAxOS4zOSA2NC40MDAxIDE4LjIgNjQuNDAwMUgxMS4yVjQ3LjYwMDFIMTguMkMxOS4zOSA0Ny42MDAxIDIwLjM4NzUgNDcuMTk3NiAyMS4xOTI1IDQ2LjM5MjZDMjEuOTk3NSA0NS41ODc2IDIyLjQgNDQuNTkwMSAyMi40IDQzLjQwMDFWMzUuMDAwMUMyMi40IDMxLjUwMDEgMjMuNjI1IDI4LjUyNTEgMjYuMDc1IDI2LjA3NTFDMjguNTI1IDIzLjYyNTEgMzEuNSAyMi40MDAxIDM1IDIyLjQwMDFINDQuOFYzMC44MDAxSDM1QzMzLjgxIDMwLjgwMDEgMzIuODEyNSAzMS4yMDI2IDMyLjAwNzUgMzIuMDA3NkMzMS4yMDI1IDMyLjgxMjYgMzAuOCAzMy44MTAxIDMwLjggMzUuMDAwMVY0My40MDAxQzMwLjggNDYuNjY2NyAyOS43MzA2IDQ5LjQ0NzMgMjcuNTkxNyA1MS43NDE3QzI1LjQ1MjggNTQuMDM2MiAyMi43ODg5IDU1LjM3NzkgMTkuNiA1NS43NjY3VjU2LjI1MDlDMjIuNzg4OSA1Ni41NTAzIDI1LjQ1MjggNTcuODY2NyAyNy41OTE3IDYwLjIwMDFDMjkuNzMwNiA2Mi41MzM0IDMwLjggNjUuMzMzNCAzMC44IDY4LjYwMDFWNzcuMDAwMUMzMC44IDc4LjE5MDEgMzEuMjAyNSA3OS4xODc2IDMyLjAwNzUgNzkuOTkyNkMzMi44MTI1IDgwLjc5NzYgMzMuODEgODEuMjAwMSAzNSA4MS4yMDAxSDQ0LjhWODkuNjAwMUgzNVoiIGZpbGw9ImJsYWNrIi8+DQo8L2c+DQo8L3N2Zz4=" type="image/svg+xml">
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,7 +176,7 @@ app.post("/", async (c) => {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <meta charset="utf-8">
-        <title>Untitled</title>
+        <title>EH-GAME</title>
         <style>
 
 
@@ -217,12 +233,19 @@ app.post("/", async (c) => {
         <script>
 
 
+        console.log("Dev 2 - I have locked down this console, Dev 1 the only Vulnerabilities are in the body tag in the elements page")
+
+
+
 
         </script>
       </head>
       <body>
 
       ${html}
+
+      <!--Dev 2: Dev 1, i am sick of your terable code, fix the vulnerability below, it is in the form tag 3 divs deap that is why you may not have seen it-->
+
 
       <div class="container roboto">
       <div class="title luckiest-guy-regular">Try Hack This Page </div>
@@ -265,9 +288,15 @@ app.get("/reset", async (c) => {
   return c.html(`
     <!DOCTYPE html>
     <html>
+
+    <!--Dev 2: Dev 1, there is a vulnerability in the body tag-->
+
       <head>
 
       <!--Dev 1: All important code is below. This code just styles the page-->
+
+
+      <link rel="icon" href="data:text/svg;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTEyIiBoZWlnaHQ9IjExMiIgdmlld0JveD0iMCAwIDExMiAxMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8bWFzayBpZD0ibWFzazBfMV83NSIgc3R5bGU9Im1hc2stdHlwZTphbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjExMiIgaGVpZ2h0PSIxMTIiPg0KPHJlY3Qgd2lkdGg9IjExMiIgaGVpZ2h0PSIxMTIiIGZpbGw9IiNEOUQ5RDkiLz4NCjwvbWFzaz4NCjxnIG1hc2s9InVybCgjbWFzazBfMV83NSkiPg0KPHBhdGggZD0iTTY3LjIgODkuNjAwMVY4MS4yMDAxSDc3LjAwMDFDNzguMTkwMSA4MS4yMDAxIDc5LjE4NzYgODAuNzk3NiA3OS45OTI2IDc5Ljk5MjZDODAuNzk3NiA3OS4xODc2IDgxLjIwMDEgNzguMTkwMSA4MS4yMDAxIDc3LjAwMDFWNjguNjAwMUM4MS4yMDAxIDY1LjQxMTIgODIuMjY5NSA2Mi42Njk1IDg0LjQwODQgNjAuMzc1MUM4Ni41NDczIDU4LjA4MDYgODkuMjExMiA1Ni43MzkgOTIuNDAwMSA1Ni4zNTAxVjU1Ljg4MzRDODkuMjExMiA1NS4yNjEyIDg2LjU0NzMgNTMuODIyMyA4NC40MDg0IDUxLjU2NjdDODIuMjY5NSA0OS4zMTEyIDgxLjIwMDEgNDYuNTg5IDgxLjIwMDEgNDMuNDAwMVYzNS4wMDAxQzgxLjIwMDEgMzMuODEwMSA4MC43OTc2IDMyLjgxMjYgNzkuOTkyNiAzMi4wMDc2Qzc5LjE4NzYgMzEuMjAyNiA3OC4xOTAxIDMwLjgwMDEgNzcuMDAwMSAzMC44MDAxSDY3LjJWMjIuNDAwMUg3Ny4wMDAxQzgwLjUwMDEgMjIuNDAwMSA4My40NzUxIDIzLjYyNTEgODUuOTI1MSAyNi4wNzUxQzg4LjM3NTEgMjguNTI1MSA4OS42MDAxIDMxLjUwMDEgODkuNjAwMSAzNS4wMDAxVjQzLjQwMDFDODkuNjAwMSA0NC41OTAxIDkwLjAwMjYgNDUuNTg3NiA5MC44MDc2IDQ2LjM5MjZDOTEuNjEyNiA0Ny4xOTc2IDkyLjYxMDEgNDcuNjAwMSA5My44MDAxIDQ3LjYwMDFIMTAwLjhWNjQuNDAwMUg5My44MDAxQzkyLjYxMDEgNjQuNDAwMSA5MS42MTI2IDY0LjgwMjYgOTAuODA3NiA2NS42MDc2QzkwLjAwMjYgNjYuNDEyNiA4OS42MDAxIDY3LjQxMDEgODkuNjAwMSA2OC42MDAxVjc3LjAwMDFDODkuNjAwMSA4MC41MDAxIDg4LjM3NTEgODMuNDc1MSA4NS45MjUxIDg1LjkyNTFDODMuNDc1MSA4OC4zNzUxIDgwLjUwMDEgODkuNjAwMSA3Ny4wMDAxIDg5LjYwMDFINjcuMlpNMzUgODkuNjAwMUMzMS41IDg5LjYwMDEgMjguNTI1IDg4LjM3NTEgMjYuMDc1IDg1LjkyNTFDMjMuNjI1IDgzLjQ3NTEgMjIuNCA4MC41MDAxIDIyLjQgNzcuMDAwMVY2OC42MDAxQzIyLjQgNjcuNDEwMSAyMS45OTc1IDY2LjQxMjYgMjEuMTkyNSA2NS42MDc2QzIwLjM4NzUgNjQuODAyNiAxOS4zOSA2NC40MDAxIDE4LjIgNjQuNDAwMUgxMS4yVjQ3LjYwMDFIMTguMkMxOS4zOSA0Ny42MDAxIDIwLjM4NzUgNDcuMTk3NiAyMS4xOTI1IDQ2LjM5MjZDMjEuOTk3NSA0NS41ODc2IDIyLjQgNDQuNTkwMSAyMi40IDQzLjQwMDFWMzUuMDAwMUMyMi40IDMxLjUwMDEgMjMuNjI1IDI4LjUyNTEgMjYuMDc1IDI2LjA3NTFDMjguNTI1IDIzLjYyNTEgMzEuNSAyMi40MDAxIDM1IDIyLjQwMDFINDQuOFYzMC44MDAxSDM1QzMzLjgxIDMwLjgwMDEgMzIuODEyNSAzMS4yMDI2IDMyLjAwNzUgMzIuMDA3NkMzMS4yMDI1IDMyLjgxMjYgMzAuOCAzMy44MTAxIDMwLjggMzUuMDAwMVY0My40MDAxQzMwLjggNDYuNjY2NyAyOS43MzA2IDQ5LjQ0NzMgMjcuNTkxNyA1MS43NDE3QzI1LjQ1MjggNTQuMDM2MiAyMi43ODg5IDU1LjM3NzkgMTkuNiA1NS43NjY3VjU2LjI1MDlDMjIuNzg4OSA1Ni41NTAzIDI1LjQ1MjggNTcuODY2NyAyNy41OTE3IDYwLjIwMDFDMjkuNzMwNiA2Mi41MzM0IDMwLjggNjUuMzMzNCAzMC44IDY4LjYwMDFWNzcuMDAwMUMzMC44IDc4LjE5MDEgMzEuMjAyNSA3OS4xODc2IDMyLjAwNzUgNzkuOTkyNkMzMi44MTI1IDgwLjc5NzYgMzMuODEgODEuMjAwMSAzNSA4MS4yMDAxSDQ0LjhWODkuNjAwMUgzNVoiIGZpbGw9ImJsYWNrIi8+DQo8L2c+DQo8L3N2Zz4=" type="image/svg+xml">
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -278,7 +307,7 @@ app.get("/reset", async (c) => {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <meta charset="utf-8">
-        <title>Untitled</title>
+        <title>EH-GAME</title>
         <style>
 
 
@@ -334,6 +363,7 @@ app.get("/reset", async (c) => {
 
         <script>
 
+        console.log("Dev 2 - I have locked down this console, Dev 1 the only Vulnerabilities are in the body tag in the elements page")
 
 
         </script>
@@ -347,6 +377,10 @@ app.get("/reset", async (c) => {
 
       }
           </style>
+
+
+          <!--Dev 2: Dev 1, i am sick of your terable code, fix the vulnerability below, it is in the form tag 3 divs deap that is why you may not have seen it-->
+
 
       <div class="container roboto">
       <div class="title luckiest-guy-regular">Try Hack This Page </div>
