@@ -285,6 +285,7 @@ app.all("/reset", async (c) => {
     c.env.EH_GAME.delete("html");
   } catch (e) {
     console.log(e);
+    return c.html(`${e}`);
   }
 
   return c.html(`
