@@ -283,7 +283,9 @@ app.post("/", async (c) => {
 app.all("/reset", async (c) => {
   try {
     c.env.EH_GAME.delete("html");
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 
   return c.html(`
     <!DOCTYPE html>
