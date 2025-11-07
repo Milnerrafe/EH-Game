@@ -281,14 +281,7 @@ app.post("/", async (c) => {
 });
 
 app.all("/reset", async (c) => {
-  try {
-    c.env.EH_GAME.delete("html");
-  } catch (e) {
-    console.log(e);
-    return c.html(`${e}`);
-  }
-
-  return c.html(`
+  const content = `
     <!DOCTYPE html>
     <html>
 
@@ -423,7 +416,11 @@ app.all("/reset", async (c) => {
 
       </body>
     </html>
-        `);
+        `;
+
+  await c.env.EH_GAME.put("html", content);
+
+  return c.html(content);
 });
 
 export default app;
