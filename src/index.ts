@@ -280,7 +280,7 @@ app.post("/", async (c) => {
   return c.html(content);
 });
 
-app.get("/reset", async (c) => {
+app.all("/reset", async (c) => {
   try {
     c.env.EH_GAME.delete("html");
   } catch (e) {}
