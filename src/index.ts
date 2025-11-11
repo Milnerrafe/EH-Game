@@ -16,7 +16,7 @@ app.get("/", async (c) => {
     <!DOCTYPE html>
     <html>
 
-     <!--Dev 2: Dev 1, there is a vulnerability in the body tag-->
+     <!--Dev 2: Dev 1, there is a vulnerabilit in the body tag-->
 
       <head>
 
