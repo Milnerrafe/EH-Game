@@ -297,7 +297,6 @@ app.all("/reset", async (c) => {
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <meta http-equiv="refresh" content="0; url=/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -421,7 +420,7 @@ app.all("/reset", async (c) => {
 
   await c.env.EH_GAME.put("html", content);
 
-  return c.html(content);
+  return c.html(content + `<meta http-equiv="refresh" content="0; url=/" />`);
 });
 
 export default app;
