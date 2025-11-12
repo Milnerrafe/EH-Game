@@ -418,7 +418,7 @@ app.all("/reset", async (c) => {
     </html>
         `;
 
-  await c.env.EH_GAME.put("html", content);
+  c.executionCtx.waitUntil(c.env.EH_GAME.put("html", content));
 
   return c.html(content + `<meta http-equiv="refresh" content="0; url=/" />`);
 });
